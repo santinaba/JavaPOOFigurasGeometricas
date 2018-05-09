@@ -29,6 +29,9 @@ public class POOFigurasGeometricas {
         System.out.println("| 1) Calcular el area y perimetro de un Circulo    |");
         System.out.println("| 2) Calcular el area y perimetro de un Cuadrado   |");
         System.out.println("| 3) Calcular el area y perimetro de un Rectangulo |");
+        System.out.println("| 4) Calcular el area y perimetro de un triangulo  |");
+        System.out.println("| 5) Calcular el area y perimetro de un trapecio   |");
+        System.out.println("| 6) Calcular el area y perimetro de un Pentagono   |");
         System.out.println("| *) Salir                                         |");
         System.out.println("+==================================================+");
         entradaTeclado = new Scanner(System.in);
@@ -76,11 +79,58 @@ public class POOFigurasGeometricas {
                 System.out.println("El Area del Rectangulo es: " + rectangulo.getArea());
                 System.out.println("El Perimetro del Rectangulo es: " + rectangulo.getPerimetro());
                 break;
-            default:
+            case 4:
+                limpiarConsola();
+                System.out.println("+==================================================+");
+                System.out.println("| SubPrograma: Triangulo                         |");
+                System.out.println("+==================================================+");
+                System.out.print("Introduzca el valor del lado1: ");
+                double lado1 = entradaTeclado.nextDouble();
+                System.out.print("Introduzca el valor del lado2: ");
+                double lado2 = entradaTeclado.nextDouble();
+                System.out.print("Introduzca el valor del lado3(base): ");
+                double lado3 = entradaTeclado.nextDouble();
+                Triangulo triangulo = new Triangulo(lado1, lado2, lado3);
+                System.out.println("El Area del Triangulo es: " + triangulo.getArea());
+                System.out.println("El Perimetro del Triangulo es: " + triangulo.getPerimetro());
+                break;
+            case 5:
+                limpiarConsola();
+                System.out.println("+==================================================+");
+                System.out.println("| SubPrograma: Trapecio                         |");
+                System.out.println("+==================================================+");
+                System.out.print("Introduzca el valor del parte1(paralelas): ");
+                double parte1 = entradaTeclado.nextDouble();
+                System.out.print("Introduzca el valor del parte2(parte superior): ");
+                double parte2 = entradaTeclado.nextDouble();
+                System.out.print("Introduzca el valor del parte3(base): ");
+                double parte3 = entradaTeclado.nextDouble();
+                System.out.print("Introduzca el valor del parte4(altura): ");
+                double parte4 = entradaTeclado.nextDouble();
+                Trapecio trapecio = new Trapecio(parte1, parte2, parte3, parte4);
+                System.out.println("El Area del Trapecio es: " + trapecio.getArea());
+                System.out.println("El Perimetro del Trapecio es: " + trapecio.getPerimetro());
+                break;
+                
+             case 6:
+                
+                limpiarConsola();
+                System.out.println("+==================================================+");
+                System.out.println("| SubPrograma: Paralelogramo                          |");
+                System.out.println("+==================================================+");
+                System.out.print("Introduzca el valor de la Diagonal: ");
+                double diagonal = entradaTeclado.nextDouble();
+                System.out.print("Introduzca el valor de la Altura: ");
+                double alto = entradaTeclado.nextDouble();
+                Paralelogramo paralelogramo = new Paralelogramo(diagonal, alto);
+                System.out.println("El Area del Paralelogramo es: " + paralelogramo.getArea());
+                break;
+            
+                default:
                 System.out.println("Salio del programa");
         }
     }
-    
+
     /**
      * Método que limpia pantalla de la consola. Funciona fuera de NetBeans.
      */
